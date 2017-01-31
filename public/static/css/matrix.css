@@ -1,0 +1,82 @@
+/*adding a black bg to the body to make things clearer*/
+body {
+    padding-top: 25px;
+    background: black;
+}
+
+#c {
+    z-index: 0;
+}
+
+.mono-text{
+    /*margin: auto;*/
+    /*padding: auto;*/
+    /*position: absolute;*/
+    /*z-index: 1;*/
+    /*top: 5%;*/
+    /*left: 10%;*/
+    color: white;
+    /*font-size: 50px;*/
+    font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
+}
+
+@font-face {
+    font-family: 'NjNaruto';
+    src: url('../fonts/njnaruto.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+#myName {
+    font-family: 'NjNaruto';
+}
+
+#knowMore{
+    text-decoration: none;
+    color: white;
+    /*font-size: 0.6em;*/
+    font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
+}
+
+.stroke-shadow
+{
+    color: white;
+    text-shadow:
+    -4px -4px 2px #000,
+     4px -4px 2px #000,
+     -4px 4px 2px #000,
+      4px 4px 2px #000;
+}
+
+#terminal {
+    background-color: black;
+    overflow-y: auto;
+    color: #eee;
+    border: 2px solid cyan;
+    position: relative;
+    z-index: 1;
+    min-height: 320px;
+    max-height: 480px;
+}
+
+#info-box {
+    background-color: black;
+    overflow-y: auto;
+    color: #eee;
+    border: 2px solid white;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 10px;
+    /* min-height: 320px; */
+    /* max-height: 480px; */
+}
+
+#info-box ul {
+    margin: 1.5rem 0rem;
+    list-style: none;
+    padding-left: 10px;
+}
+
+#info-box a {
+    color: white;
+}

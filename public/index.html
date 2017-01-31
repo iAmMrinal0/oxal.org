@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<!--
+      ▀▄▀█     ▄█        ▄▄▄▄▀     ▄███▄          ▄▄▄▄▄        ▄  █
+     █ █ █     ██     ▀▀▀ █        █▀   ▀        █     ▀▄     █   █
+     █ ▄ █     ██         █        ██▄▄        ▄  ▀▀▀▀▄       ██▀▀█
+     █   █     ▐█        █         █▄   ▄▀      ▀▄▄▄▄▀        █   █
+     █          ▐       ▀          ▀███▀                         █
+     ▀                                                          ▀
+
+           .-`
+            `-.
+            `-:--.         `....`
+           `-@MM::-      `-@MM@MM-.
+        .-@MM:---::.     -@MM@MM::-`
+     `-@MM::-`    `.`   .@MM@MM@MM:.
+   `.@MM@MM-`       ``  .@MM@MM@MM-.
+  .@MM@MM:-`         `.` .@MM@MM::-.
+  .@MM@MM::--.`        ..-@MM@MM::-.
+  -@MM@MM@MM@MM--...`..-@MM@MM@MM::-.`
+  `-@MM@MM@MM@MM@MM@MM@MM@MM@MM@MM@MM:-.....`
+    .-@MM@MM@MM@MM@MM@MM@MM@MM@MM@MM@MM@MM::-`
+      `-@MM@MM@MM@MM@MM@MM@MM@MM@MM@MM@MM@MM::`
+        `-@MM@MM@MM@MM@MM@MM@MM@MM@MM@MM@MM@MM-`
+           `.--@MM@MM@MM@MM@MM@MM@MM@MM@MM@MM@MM.
+               `.--------------------------------`
+                 .@MM@MM@MM@MM@MM@MM@MM@MM@MM@MM:.
+                 `-@MM@MM@MM@MM@MM@MM@MM-``-@MM::-`
+                  .@MM@MM@MM@MM@MM@MM@MM-  .@MM@MM-`
+                  -@MM@MM@MM@MM@MM@MM::-`  `-@MM::-.
+                  -@MM@MM@MM@MM@MM@MM@MM:.  .-@MM-`
+                  .-@MM@MM@MM@MM@MM@MM:-`--  `@MM.
+                ``-@MM@MM@MM@MM@MM@MM:-.  .---:--
+             `--@MM@MM@MM@MM@MM@MM@MM:-`   -@MM-`
+            .@MM@MM@MM@MM@MM@MM@MM@MM@MM-.  `-:.
+           `.@MM@MM@MM@MM@MM@MM@MM@MM@MM:--.  .-.
+          `@MM@MM@MM@MM@MM@MM@MM@MM@MM@MM@MM-` `.
+        `.@MM@MM@MM@MM@MM@MM@MM@MM@MM@MM@MM@MM.
+       .-@MM@MM@MM@MM@MM@MM@MM@MM@MM@MM@MM@MM::-.
+       -@MM@MM@MM@MM@MM@MM@MM@MM@MM@MM@MM@MM@MM::-`
+        .-@MM@MM@MM@MM@MM@MM@MM@MM@MM@MM@MM@MM@MM:-`
+          `..-@MM@MM@MM-`.--@MM---@MM@MM@MM@MM@MM::-
+              ``..-@MM:-   .@MM. `.@MM@MM@MM@MM@MM:-
+                  .@MM-`   .-:-`  `...--@MM@MM@MM:-`
+                 `@MM::.   `---    ....---@MM@MM--.`
+              ``.-@MM::-   .---. `.----------------.
+         `...----------.`.-------------------------.
+        `-----------------------------------------`
+       `.................................`.......`
+
+
+      ███▄    █     ██▓    ███▄    █     ▄▄▄██▀▀▀    ▄▄▄
+      ██ ▀█   █    ▓██▒    ██ ▀█   █       ▒██      ▒████▄
+     ▓██  ▀█ ██▒   ▒██▒   ▓██  ▀█ ██▒      ░██      ▒██  ▀█▄
+     ▓██▒  ▐▌██▒   ░██░   ▓██▒  ▐▌██▒   ▓██▄██▓     ░██▄▄▄▄██
+     ▒██░   ▓██░   ░██░   ▒██░   ▓██░    ▓███▒       ▓█   ▓██▒
+     ░ ▒░   ▒ ▒    ░▓     ░ ▒░   ▒ ▒     ▒▓▒▒░       ▒▒   ▓▒█░
+     ░ ░░   ░ ▒░    ▒ ░   ░ ░░   ░ ▒░    ▒ ░▒░        ▒   ▒▒ ░
+        ░   ░ ░     ▒ ░      ░   ░ ░     ░ ░ ░        ░   ▒
+              ░     ░              ░     ░   ░            ░  ░
+
+-->
+<html>
+    <head>
+        <title>oxalorg</title>
+        <link rel="stylesheet" type="text/css" href="/static/css/normalize.css">
+        <link rel="stylesheet" type="text/css" href="/static/css/skeleton.css">
+        <link rel="stylesheet" type="text/css" href="/static/css/matrix.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body onclick="randomize_matrix();">
+        <canvas id="c" style="position:absolute;top:0;left:0;"></canvas>
+        <div class="container">
+            <div class="row">
+                <div class="twelve columns mono-text">
+                    <h1 class="stroke-shadow" id="myName" >oxalorg</h1>
+                    <div id="info-box">
+                        <ul>
+                            <li>Learn more <a href="/about">about</a> me.</li>
+                            <li>Look at some of my <a href="/projects">projects</a></li>
+                            <li>Click randomly on the page for some <em>MAGIC!</em></li>
+
+                            <!-- <li><a href="/blog">blog</a></li> -->
+                            <!-- <li><a href="/notes">notes</a></li> -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row" id="terminal-parent">
+
+            </div>
+        </div>
+    </body>
+    <script type="text/javascript" src="/static/js/ajax.js"></script>
+    <script type="text/javascript" src="/static/js/terminal.js"></script>
+    <script type="text/javascript" src="/static/js/index.js"></script>
+    <script type="text/javascript" src="/static/js/matrix.js"></script>
+    {% include 'oxalorg/analytics.html' %}
+</html>
