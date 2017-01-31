@@ -1,0 +1,16 @@
+site_name: "oxalors home base"
+site_desc: "" 
+site_baseurl: /
+
+author: oxalorg
+author_link: /about
+incremental: recipe
+
+# Default values
+default_layout: post
+allowed:
+    - .md
+    - .mkd
+    - .markdown
+ignored:
+    - README.md
