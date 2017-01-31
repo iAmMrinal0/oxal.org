@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- ============================================================================================-->
+<!-- Using the minimal css framework: http://github.com/oxalorg/Vader.css -->
+<!-- JOIN THE DARK SIDE -->
+<!-- ============================================================================================-->
+<head>
+    <!-- Config -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Information -->
+    <title>{% block title %}{{ site_name }}{% endblock %}</title>
+
+    <!-- Assets -->
+    <link href="https://fonts.googleapis.com/css?family=Lustria|Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="{{ site_baseurl }}/css/normalize.css">
+    <link rel="stylesheet" href="{{ site_baseurl }}/css/vader.css" async>
+    <link rel="stylesheet" href="{{ site_baseurl }}/css/custom.css" async>
+</head>
+<body>
+<header>
+    <nav>
+        <a class="sakura-blossom no-border" href="{{ site_baseurl }}/">{{ site_name }}</a>
+        [<a class="sakura-fade no-border" href="/blog">$blog</a>,
+        <a class="sakura-fade no-border" href="/projects">$projects</a>,
+        <a class="sakura-fade no-border" href="/reviews">$reviews</a>]
+    </nav>
+</header>
+<main>
+    {%- block body -%}{%- endblock -%}
+</main>
+</body>
+</html>

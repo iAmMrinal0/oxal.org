@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{%- block body -%}
+<h1>{{ title }}</h1>
+{{ content }}
+{%- if index -%}
+<h2>{{ index }}</h2>
+{%- for post in site.ord_pages -%}
+{%- if post.category == category and post.layout != "index" and post.draft == False -%}
+<div>
+    <ul>
+        <li style="padding-bottom:7px;">
+            <a class="no-border" href="{{ post.slug }}" title="{{ post.title }}">{{ post.title }} </a><small><em><span class="sakura-blossom inline-block">-{{ post.date | datetimeformat('%d %b, %Y') }}</span></em></small>
+        </li>
+    </ul>
+</div>
+{%- endif -%}
+{%- endfor -%}
+{%- endif -%}
+{%- endblock -%}
