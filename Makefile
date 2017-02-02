@@ -1,5 +1,5 @@
 .PHONY: all rsync setup force_rsync
-ROOTDIR=/var/www/rogue.oxal.org
+ROOTDIR=/var/www/oxal.org
 all: rsync setup
 
 rsync:

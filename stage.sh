@@ -1,5 +1,5 @@
 #!/bin/bash
-rootDir=/var/www/rogue.oxal.org
+rootDir=/var/www/oxal.org
 appDir=$rootDir/public
 nginxConf=rogue.oxal.org.conf
 
