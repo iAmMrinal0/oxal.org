@@ -5,7 +5,27 @@
 {%- if index -%}
 <h2>{{ index }}</h2>
 {%- for post in site.ord_pages -%}
-{%- if post.category == category and post.layout != "index" and post.draft == False -%}
+Post.category : {{ post.category }} <br>
+Post.slug {{ post.slug }} -<br>
+Post.layout {{ post.layout }}- <br>
+Slug: {{ slug }}<br>
+<hr>
+{%- if post.category == slug and post.layout != "index" -%}
+<div>
+    <ul>
+        <li style="padding-bottom:7px;">
+            <a class="no-border" href="{{ post.slug }}" title="{{ post.title }}">{{ post.title }} </a><small><em><span class="sakura-blossom inline-block">-{{ post.date | datetimeformat('%d %b, %Y') }}</span></em></small>
+        </li>
+    </ul>
+</div>
+{%- endif -%}
+{%- endfor -%}
+<h2> Collections </h2>
+{%- for post in site.ord_pages -%}
+{%- if post.category == slug and post.layout == "index" -%}
+Post.cate : {{ post.category }} -
+Post.slug {{ post.slug }} -
+Slug: {{ slug }}
 <div>
     <ul>
         <li style="padding-bottom:7px;">
