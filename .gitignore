@@ -1,3 +1,7 @@
-/public/dumptyd
-/public/img
-/public/files
+/public
+/public_site
+/src/dumptyd
+/src/img
+/src/files
+/random
+/.oxgen.log
