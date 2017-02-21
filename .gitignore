@@ -5,3 +5,7 @@
 /src/files
 /random
 /.oxgen.log
+
+__pycache__/
+*.py[cod]
+*$py.class

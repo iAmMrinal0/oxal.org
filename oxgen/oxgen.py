@@ -1,4 +1,3 @@
-from . import templater
 from . import marker
 import os
 import argparse
