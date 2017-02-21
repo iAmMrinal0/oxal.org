@@ -1,7 +1,7 @@
 #!/bin/bash
 rootDir=/var/www/oxal.org
 appDir=$rootDir/public
-nginxConf=rogue.oxal.org.conf
+nginxConf=oxal.org.conf
 
 # First time set up root directory
 if [ ! -d "$appDir" ]; then
