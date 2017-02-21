@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <title>Visual graphic A-Star search using javascript</title>
+        <script src="/projects/visual-astar-js/lib/astar.js"></script>
+        <link href='/projects/normalize.css' rel='stylesheet' type='text/css'>
+        <link href='/projects/sakura.css' rel='stylesheet' type='text/css'>
+        <!-- <link href='/projects/vader.css' rel='stylesheet' type='text/css'> -->
+        <style>
+        body {
+            max-width: 920px;
+            margin: auto;
+        }
+        </style>
+        <script type="text/javascript">
+        window.onload = function () {
+            visualAStar(32, 999);
+        };
+
+        function repopulate() {
+            visualAStar(32, 666);
+        }
+        </script>
+    </head>
+    <body>
+        <h1> Visual A-Star JavaScript </h1>
+        <canvas id="astar"></canvas>
+        <p><button type="button" onclick="repopulate();">Repopulate</button></p>
+        <footer>
+            <p>This is my first Javascript project. Help me learn by contributing at <a href="https://github.com/oxalorg/visual-astar-js">GitHub</a>.</p>
+        </footer>
+    </body>
+</html>

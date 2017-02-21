@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <title>sakura demo</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link href='normalize.css' rel='stylesheet' type='text/css'>
+        <link id="sakura-css" href='sakura.css' rel='stylesheet' type='text/css'>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+        <style>
+        #toggle {
+            color: white;
+            background-color: black;
+            font-size: 18px;
+            position: fixed;
+            left: 0px;
+            top: 0px;
+        }
+        #top {
+            padding-top: 40px;
+        }
+        </style>
+        <script>
+        var sakura = document.getElementById("sakura-css");
+        sakura.disabled = true;
+        function toggleSakura() {
+            if (sakura.disabled === true)
+                sakura.disabled = false
+            else
+                sakura.disabled = true
+        }
+        </script>
+    </head>
+    <body>
+        <div id="toggle">
+            Toggle sakura.css on/off: <button class="button" id="toggleButton" onClick="toggleSakura();">Toggle</button>
+        </div>
+        <div id="top">
+            {{{content}}}
+        </div>
+    </body>
+</html>
