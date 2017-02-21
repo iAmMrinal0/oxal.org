@@ -22,7 +22,7 @@ class Oxgen:
     def set_defaults(self):
         self.MD_EXT = ('.markdown', '.md', '.mkd')
         self.INPUT_DIR = 'src'
-        self.OUTPUT_DIR = 'public_site'
+        self.OUTPUT_DIR = 'public'
         self.config = yaml.load(open(absjoin(self.ROOT_DIR, '_config.yml')).read())
         self.default_template = self.config.get('default_layout')
         self.ALLOWED = set(self.config.get('allowed', []))
@@ -66,11 +66,13 @@ class Oxgen:
         for root, dirs, files in os.walk(self.INPUT_DIR):
             for fname in files:
                 fbase, fext = os.path.splitext(fname)
-                fpath = os.path.join(root, fname)
-                rel_fpath = os.path.relpath(fpath, self.INPUT_DIR)
-                out_fpath = os.path.join(self.OUTPUT_DIR, rel_fpath)
 
                 if fext in self.MD_EXT:
+                    fpath = os.path.join(root, fname)
+                    rel_fpath = os.path.relpath(fpath, self.INPUT_DIR)
+                    out_fpath = os.path.join(self.OUTPUT_DIR, rel_fpath)
+                    out_fpath = os.path.splitext(out_fpath)[0] + '.html';
+
                     with open(fpath) as f:
                         text = f.read()
 

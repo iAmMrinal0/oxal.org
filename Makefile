@@ -3,10 +3,10 @@ ROOTDIR=/var/www/oxal.org
 all: rsync setup
 
 rsync:
-	rsync -avz --exclude='.git/' . ark:$(ROOTDIR)
+	rsync -ahvz --exclude='.git/' . ark:$(ROOTDIR)
 
 force_rsync:
-	rsync -avz --delete --exclude='.git/' . ark:$(ROOTDIR)
+	rsync -avhz --delete --exclude='.git/' . ark:$(ROOTDIR)
 
 setup:
 	ssh -t ark "cd $(ROOTDIR) && \
