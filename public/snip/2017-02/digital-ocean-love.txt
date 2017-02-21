@@ -1,0 +1,35 @@
+Support Request Created 9 months ago
+Student credit expiration. Need some digital love.
+
+Since the hint in the support ticket textarea field says to 'Describe the
+problem in great detail', here it goes. (Skip the next 2 paragraphs to get to
+the point) 
+
+I started venturing into the world of web development back almost a year ago. I
+tried out an uncountable number of 'free hosting' providers in the small hope
+that I can get my crappy code published onto the internet for my friends, and
+family to see. Rest assured, I failed miserably.
+
+I then heard about GitHub Student Pack, which offered credit for a new cloud
+hosting platform I had never heard of (I only knew about free ones back then).
+I spinned up a server and was introduced to this amazing world of DIY cloud
+computing, which I never knew existed. I learnt a lot from it and deployed my
+personal apps, notification servers, personal website all on it. It all worked
+like a charm, and obviously I started recommending all my friends to try out
+DigitalOceans awesomeness ;)
+
+But unfortunately, I just saw an email stating that over $55 worth of my
+student credit will expire in the next few days (3 days). I never needed more
+than a Tier-0 ($5) droplet for my teeny bit of use. 
+
+I'd be lying if I said I haven't enjoyed and appreciated your service all these
+months, but right now, as a broke student in India, it would be really tough
+for me to gather $5 every month simply to host my website. 
+
+So I request you for an extension on the credit is possible, or if I could
+pre-pay for 11 months of my currently $5 droplet which is deployed, or any
+other sort of assistance DigitalOcean can provide me. 
+
+Thank you
+Kind regards
+Mitesh Shah.

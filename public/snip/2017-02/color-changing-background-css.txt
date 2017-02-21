@@ -1,0 +1,26 @@
+
+body {
+    animation-name: lsd;
+    animation-duration: 60s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes lsd {
+   0% {
+      background: #fbf288;
+   }
+
+   33% {
+      background: #88fbbd;
+   }
+
+   66% {
+      background: #88bcfb;
+   }
+
+   100% {
+      background: #d59be6;
+   }
+}

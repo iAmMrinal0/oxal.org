@@ -1,0 +1,110 @@
+ox@ark:~$ ab -n 1000 -c 100 http://oxal.org/
+This is ApacheBench, Version 2.3 <$Revision: 1706008 $>
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+
+Benchmarking oxal.org (be patient)
+Completed 100 requests
+Completed 200 requests
+Completed 300 requests
+Completed 400 requests
+Completed 500 requests
+Completed 600 requests
+Completed 700 requests
+Completed 800 requests
+Completed 900 requests
+Completed 1000 requests
+Finished 1000 requests
+
+
+Server Software:        nginx
+Server Hostname:        oxal.org
+Server Port:            80
+
+Document Path:          /
+Document Length:        5070 bytes
+
+Concurrency Level:      100
+Time taken for tests:   0.149 seconds
+Complete requests:      1000
+Failed requests:        0
+Total transferred:      5298000 bytes
+HTML transferred:       5070000 bytes
+Requests per second:    6689.90 [#/sec] (mean)
+Time per request:       14.948 [ms] (mean)
+Time per request:       0.149 [ms] (mean, across all concurrent requests)
+Transfer rate:          34612.41 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    6   2.0      6      10
+Processing:     2    8   2.9      8      17
+Waiting:        1    6   2.7      6      13
+Total:          7   14   2.5     14      22
+
+Percentage of the requests served within a certain time (ms)
+  50%     14
+  66%     15
+  75%     16
+  80%     17
+  90%     18
+  95%     19
+  98%     19
+  99%     21
+ 100%     22 (longest request)
+ox@ark:~$ ab -n 1000 -c 100 https://oxal.org/
+This is ApacheBench, Version 2.3 <$Revision: 1706008 $>
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+
+Benchmarking oxal.org (be patient)
+Completed 100 requests
+Completed 200 requests
+Completed 300 requests
+Completed 400 requests
+Completed 500 requests
+Completed 600 requests
+Completed 700 requests
+Completed 800 requests
+Completed 900 requests
+Completed 1000 requests
+Finished 1000 requests
+
+
+Server Software:        nginx
+Server Hostname:        oxal.org
+Server Port:            443
+SSL/TLS Protocol:       TLSv1.2,ECDHE-RSA-AES256-GCM-SHA384,2048,256
+
+Document Path:          /
+Document Length:        5070 bytes
+
+Concurrency Level:      100
+Time taken for tests:   6.748 seconds
+Complete requests:      1000
+Failed requests:        0
+Total transferred:      5298000 bytes
+HTML transferred:       5070000 bytes
+Requests per second:    148.19 [#/sec] (mean)
+Time per request:       674.798 [ms] (mean)
+Time per request:       6.748 [ms] (mean, across all concurrent requests)
+Transfer rate:          766.72 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:       17  635 105.8    659     774
+Processing:     0    5  24.1      0     149
+Waiting:        0    5  24.0      0     148
+Total:         38  641 104.5    660     788
+
+Percentage of the requests served within a certain time (ms)
+  50%    660
+  66%    672
+  75%    680
+  80%    685
+  90%    717
+  95%    768
+  98%    769
+  99%    769
+ 100%    788 (longest request)
+ox@ark:~$ 

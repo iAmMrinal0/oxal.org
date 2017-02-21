@@ -17,10 +17,15 @@ var inputHandler = function (ans) {
     switch (ans.toLowerCase()) {
         case 'help':
             arkControl.print("Commands available:");
-            arkControl.print(" -- captain");
-            arkControl.print(" -- ark");
-            arkControl.print(" -- navigate");
+            arkControl.print("  captain");
+            arkControl.print("  ark");
+            arkControl.print("  navigate");
             arkControl.printHTML("<br />");
+            break;
+
+        case 'ls':
+            arkControl.print("ox.txt");
+            arkControl.print("secret.png");
             break;
 
         case 'captain':
@@ -61,7 +66,7 @@ var inputHandler = function (ans) {
             break;
 
         default:
-            arkControl.print("Type H.E.L.P (help). PS: This is not a distress signal.");
+            arkControl.print("Type 'help' for usage of @arks terminal. PS: This is not a distress signal.");
     }
     arkControl.input("", inputHandler);
 }
