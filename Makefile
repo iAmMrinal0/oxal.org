@@ -1,6 +1,9 @@
 .PHONY: all rsync setup force_rsync
 ROOTDIR=/var/www/oxal.org
-all: rsync setup
+all: build rsync
+
+build:
+	python3 -m oxgen .
 
 rsync:
 	rsync -ahvz --exclude='.git/' . ark:$(ROOTDIR)

@@ -24,7 +24,7 @@ class Oxgen:
         self.INPUT_DIR = 'src'
         self.OUTPUT_DIR = 'public'
         self.config = yaml.load(open(absjoin(self.ROOT_DIR, '_config.yml')).read())
-        self.default_template = self.config.get('default_layout')
+        self.DEFAULTS = self.config.get('defaults')
         self.ALLOWED = set(self.config.get('allowed', []))
         self.IGNORED = set(self.config.get('ignored', []))
         self.DIR_IGNORED = {'_', '.'} | set(self.config.get('dir_ignored', []))
@@ -55,45 +55,56 @@ class Oxgen:
         self.jinja_env.globals = {'site': self.site}
 
     def walk(self, func):
-        for root, dirs, files in os.walk(self.ROOT_DIR):
-            if self.is_dir_ignored(root): continue
+        for root, dirs, files in os.walk(self.INPUT_DIR):
+            if self.is_dir_ignored(root): 
+                print("Ignoring directory: ", root)
+                continue
             for fname in files:
                 fpath = absjoin(root, fname)
                 if self.is_allowed(fname) and not self.is_ignored(fname):
                     func(fname, fpath, root)
 
-    def main(self):
-        for root, dirs, files in os.walk(self.INPUT_DIR):
-            for fname in files:
-                fbase, fext = os.path.splitext(fname)
 
-                if fext in self.MD_EXT:
-                    fpath = os.path.join(root, fname)
-                    rel_fpath = os.path.relpath(fpath, self.INPUT_DIR)
-                    out_fpath = os.path.join(self.OUTPUT_DIR, rel_fpath)
-                    out_fpath = os.path.splitext(out_fpath)[0] + '.html';
+    def build(self, in_fpath, out_fpath, context):
+        layout = context.get('layout', self.DEFAULTS['layout'])
+        if not layout.endswith('.html'):
+            layout += '.html'
+        if os.path.isfile(out_fpath):
+            print("You have conflicting markdown and html files.")
+            print("Skipping file: ", in_fpath, " to prevent overwriting.")
+            return
+        with open(out_fpath, 'w') as fp:
+            logging.info("Writing to file: {}".format(out_fpath))
+            templater = self.jinja_env.get_template(layout)
+            fp.write(templater.render(context))
 
-                    with open(fpath) as f:
-                        text = f.read()
 
-                    try:
-                        html, info = marker.md2html(text)
-                    except:
-                        html, info = text, {}
-                        print("Invalid metadata in file: ", fpath)
+    def main(self, fname, fpath, root):
+        fbase, fext = os.path.splitext(fname)
+        if fext in self.MD_EXT:
+            fpath = os.path.join(root, fname)
+            rel_fpath = os.path.relpath(fpath, self.INPUT_DIR)
+            out_fpath = os.path.join(self.OUTPUT_DIR, rel_fpath)
+            out_fpath = os.path.splitext(out_fpath)[0] + '.html';
 
-                    info.update(self.config)
-                    layout = info.get('layout', 'page.html')
-                    if not layout.endswith('.html'):
-                        layout += '.html'
-                    if os.path.isfile(out_fpath):
-                        print("You have conflicting markdown and html files.")
-                        print("Skipping file: ", fpath, " to prevent overwriting.")
-                        continue
-                    with open(out_fpath, 'w') as fp:
-                        logging.info("Writing to file: {}".format(out_fpath))
-                        templater = self.jinja_env.get_template(layout)
-                        fp.write(templater.render(info))
+            with open(fpath) as f:
+                text = f.read()
+
+            try:
+                html, metadata = marker.md2html(text)
+            except:
+                html, metadata = marker.md2html('---\n---\n' + text)
+                print("WARNING: Invalid metadata in file: ", fpath)
+
+            context = self.DEFAULTS.copy()
+            context.update(self.config)
+            context.update(metadata)
+            context['content'] = html
+
+            slug = context.get('slug', None)
+            if slug:
+                out_fpath = os.path.join(root, slug)
+            self.build(fpath, out_fpath, context)
 
 
 def cli():
@@ -105,7 +116,7 @@ def cli():
     logging.info("Starting oxgen..")
     ox = Oxgen(opts.ROOT_DIR, opts.force)
     t_start = time.time()
-    ox.main()
+    ox.walk(ox.main)
     print("Site built in \033[43m\033[31m{:0.3f}\033[0m\033[49m seconds. That's quite fast, ain't it?".format(time.time() - t_start))
     # print("Built: {} pages.".format(len(oxgen.site['pages'])))
     logging.info("Finished. Exiting...")

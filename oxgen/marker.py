@@ -4,6 +4,7 @@ and returns metadata and text in another format.
 """
 import re
 import mistune
+import markdown2
 import yaml
 from pygments import highlight
 from pygments.lexers import get_lexer_by_name
@@ -26,7 +27,16 @@ class HighlightRenderer(mistune.Renderer):
         return highlight(code, lexer, formatter)
 
 
-markdown = mistune.Markdown(renderer=HighlightRenderer())
+# markdown = mistune.Markdown(renderer=HighlightRenderer())
+md_extras = ["code-friendly",
+        "fenced-code-blocks",
+        "footnotes",
+        "header-ids",
+        "markdown-in-html",
+        # "metadata",
+]
+markdowner = markdown2.Markdown(extras=md_extras)
+markdown = markdowner.convert
 
 def md2html(text):
     """
@@ -54,7 +64,7 @@ def md2html(text):
             content.append(line)
 
     try:
-        content = '\n'.join(content)
+        content = markdown('\n'.join(content))
         metadata = yaml.load('\n'.join(metadata))
         metadata = metadata or {}
     except:
