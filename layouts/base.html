@@ -15,20 +15,19 @@
     <!-- Assets -->
     <link href="https://fonts.googleapis.com/css?family=Lustria|Open+Sans" rel="stylesheet">
     <link rel="stylesheet" href="{{ site_baseurl }}/static/css/normalize.css">
-    <link rel="stylesheet" href="{{ site_baseurl }}/static/css/sakura-dark.css" async>
-    <link rel="stylesheet" href="{{ site_baseurl }}/static/css/custom.css" async>
+    <link rel="stylesheet" href="{{ site_baseurl }}/static/css/sakura.css" async>
+    <link rel="stylesheet" href="{{ site_baseurl }}/static/css/main.css" async>
 </head>
 <body>
 <header>
     <nav>
-        <a class="sakura-blossom no-border" href="{{ site_baseurl }}/">{{ site_name }}</a>
-        [<a class="sakura-fade no-border" href="/blog">$blog</a>,
-        <a class="sakura-fade no-border" href="/projects">$projects</a>,
-        <a class="sakura-fade no-border" href="/reviews">$reviews</a>]
+        <a class="sakura-blossom no-border" href="/">oxalorg</a>
+        [<a class="sakura-fade no-border" href="/about">about</a>,
+        <a class="sakura-fade no-border" href="/projects"> projects</a>]
     </nav>
 </header>
 <main>
-    {%- block body -%}{%- endblock -%}
+    {%- block body -%}{{ content }}{%- endblock -%}
 </main>
 </body>
 </html>
