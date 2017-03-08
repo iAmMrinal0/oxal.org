@@ -1,32 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>about oxalorg</title>
-<link rel="stylesheet" href="/static/css/normalize.css">
-<link rel="stylesheet" href="/static/css/skeleton.css">
-<link rel="stylesheet" href="/static/css/main.css">
-<style>
-h1, h2{
-    font-family: 'NjNaruto';
-}
-</style>
-</head>
-<body>
+---
+title: "about oxalorg"
+layout: about
+---
 
-<div class="container">
-
-about [oxalorg](/)
-==================
+# about [oxalorg](/)
 
 *If you haven't already connected with the terminal on the front page,
 go do that now.*
 
 ------------------------------------------------------------------------
 
-The way of the shinobi
-----------------------
+## The way of the shinobi
 
 > We will gradually become indifferent to what goes on in the minds of
 > other people when we acquire an adequate knowledge of the superficial
@@ -34,8 +18,7 @@ The way of the shinobi
 > number of their errors. Whoever attaches a lot of value to the opinion
 > of the others, pays them, too much honor. - Arthur Schopenhauer
 
-my story
---------
+## My story
 
 I wanted to become an ordinary human. But due to unfortunate
 circumstances I was forced to live my life as a rogue. I trained and
@@ -45,8 +28,7 @@ I publish the learnings of my hard training at
 [computableverse.com](http://computableverse.com). I also publish rough
 notes over at [oxal.org/blog](/blog)
 
-weapons
--------
+## weapons
 
 In some part of the multiverse, a great master once said
 
@@ -71,7 +53,3 @@ screw you guys, im going home
 
 > There’s only one way to avoid criticism: Do nothing, say nothing, be
 > nothing. – Elbert Hubbard
-
-</div>
-</body>
-</html>
