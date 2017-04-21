@@ -1,13 +1,13 @@
 #!/bin/bash
 rootDir=/var/www/oxal.org
-appDir=$rootDir/public
+appDir=$rootDir
 nginxConf=oxal.org.conf
 
 # First time set up root directory
-if [ ! -d "$appDir" ]; then
-    sudo mkdir -p $appDir
+if [ ! -d "$rootDir" ]; then
+    sudo mkdir -p $rootDir
     sudo chown -R `whoami`:www-data $rootDir
-    cd $appDir
+    cd $rootDir
     echo "Rsync now and run this again"
     exit
 fi
@@ -23,7 +23,7 @@ if [ ! -h "/etc/nginx/sites-enabled/$nginxConf" ]; then
 fi
 
 # Pull changes, copy configs, reload config
-cd $appDir
+#cd $appDir
 #git pull
 #pip3 install -r requirements.txt
 sudo cp $rootDir/conf/$nginxConf /etc/nginx/sites-available/$nginxConf

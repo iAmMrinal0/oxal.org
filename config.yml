@@ -8,7 +8,7 @@ md_ext:
   - '.markdown'
 
 defaults:
-  layout: 'simple'
+  layout: 'page'
   title: 'oxalorg'
   draft: False
   author: 'ox'
@@ -16,3 +16,4 @@ defaults:
 
 site:
   title: 'oxalorg'
+  ga_id: 'UA-63732371-1'

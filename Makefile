@@ -3,7 +3,7 @@ ROOTDIR=/var/www/oxal.org
 all: build rsync
 
 build:
-	python3 -m oxgen .
+	python3 genox.py
 
 rsync:
 	rsync -ahvz --exclude='.git/' . ark:$(ROOTDIR)
