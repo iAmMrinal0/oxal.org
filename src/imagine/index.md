@@ -1,5 +1,5 @@
 ---
-layout: index
+layout: page
 index: Recipe of disaster
 date: 2016-12-30T14:51:24
 title: My Imagination
