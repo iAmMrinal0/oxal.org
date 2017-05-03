@@ -12,13 +12,17 @@
 <body>
 <h1 id="sakura-a-minimal-classless-css-framework-theme."><a href="https://oxal.org/projects/sakura">sakura</a>: a minimal <strong><em>classless</em></strong> css <em>framework</em> / <strong>theme</strong>.</h1>
 <p>[Go to <a href="https://github.com/oxalorg/sakura">Github repository</a>]</p>
+<div class="figure">
+<img src="https://raw.githubusercontent.com/oxalorg/sakura/master/sakura160.jpg" alt="The cherry blossoms" />
+<p class="caption">The cherry blossoms</p>
+</div>
 <p>Just drop in <code>sakura.css</code> to any webpage and go from ugly looking 1900's website to a pretty modern website in literally 0 seconds.</p>
 <p>Sakura supports extremely easy theming support using variables for duotone color scheming.</p>
 <p>Comes with several existing themes, can be found in the <code>css</code> folder of this repository.</p>
 <h2 id="demo">Demo</h2>
 <p>Compare a live page <strong>WITH</strong> and <strong>WITHOUT</strong> sakura.</p>
 <ul>
-<li>https://oxal.org/projects/sakura/demo</li>
+  <li><a href="https://oxal.org/projects/sakura/demo">https://oxal.org/projects/sakura/demo</a></li>
 </ul>
 <h2 id="installation">Installation</h2>
 <ol style="list-style-type: decimal">
@@ -31,12 +35,41 @@
 <p><strong>(Optional)</strong> <em>but recommended</em>, use <a href="https://github.com/necolas/normalize.css/">normalize.css</a> to reset before using sakura.</p>
 <h2 id="sites-using-sakura">Sites using Sakura</h2>
 <ul>
-<li>https://computableverse.com</li>
-<li>http://owlofathena.com</li>
-<li>http://findyourip.cf</li>
+  <li><a href="http://computableverse.com">http://computableverse.com</a></li>
+  <li><a href="http://owlofathena.com">http://owlofathena.com</a></li>
+  <li><a href="http://findyourip.cf">http://findyourip.cf</a></li>
 </ul>
-<p><strong><em>If you're using sakura, please let me know or make a pull request adding in your name. I would be super happy!! <code>^_^</code> </em></strong></p>
+<p><strong><em>If you're using sakura, please let me know or make a pull request adding in your name. I would be super happy!! <code>^_^</code></em></strong></p>
+<h2 id="theming">Theming</h2>
+<p>You can make your own themes by overriding some variables for colors.</p>
+<p>Here is an example file: <code>./scss/sakura-earthly.scss</code>:</p>
+<pre><code>/* Duotone color scheming:
+   Uses blossom as the revealing/stark color
+   Uses fade as the more prominent color
+*/
+$color-blossom: #338618;
+$color-fade: #5e5e5e;
+
+/* bg color is used for the background of the page
+   bg-alt is used for code-blocks etc
+*/
+$color-bg: #f9f9f9;
+$color-bg-alt: #C7E3BE;
+
+/* color of all the text on the page */
+$color-text: #4a4a4a;
+$font-size-base: 1.8rem;
+
+@import &quot;main&quot;;</code></pre>
 <h2 id="share-some-3">Share some &lt;3</h2>
 <p>Please leave a star :)</p>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-63732371-1', 'auto');
+  ga('send', 'pageview');
+</script>
 </body>
 </html>

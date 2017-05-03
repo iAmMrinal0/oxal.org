@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <title>sakura demo</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link href='normalize.css' rel='stylesheet' type='text/css'>
+        <link id="sakura-css" href='sakura.css' rel='stylesheet' type='text/css'>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+        <style>
+        #toggle {
+            color: white;
+            background-color: black;
+            font-size: 18px;
+            position: fixed;
+            left: 0px;
+            top: 0px;
+        }
+        #top {
+            padding-top: 40px;
+        }
+        </style>
+        <script>
+        var sakura = document.getElementById("sakura-css");
+        sakura.disabled = false;
+        function toggleSakura() {
+            if (sakura.disabled === true)
+                sakura.disabled = false
+            else
+                sakura.disabled = true
+        }
+        </script>
+    </head>
+    <body>
+        <div id="toggle">
+            Toggle sakura.css on/off: <button class="button" id="toggleButton" onClick="toggleSakura();">Toggle</button>
+        </div>
+        <div id="top">
+            <h1 id="header-level-1">Header level 1</h1>
+<h2 id="header-level-2">Header level 2</h2>
+<h3 id="header-level-3">Header level 3</h3>
+<h4 id="header-level-4">Header level 4</h4>
+<h5 id="header-level-5">Header level 5</h5>
+<h6 id="header-level-6">Header level 6</h6>
+<p>A horizontal line:</p>
+<hr />
+<p>Paragraphs look like this. Font size along with line height and maximum width are optimized for reading.</p>
+<p><em>Italic</em>, <strong>bold</strong>, and <code>monospace</code>. Itemized lists look like:</p>
+<ul>
+<li>this one</li>
+<li>that one</li>
+<li>the other one</li>
+</ul>
+<p><strong>Here's a block quote</strong>:</p>
+<blockquote>
+<p>Man surprised me most about humanity. Because he sacrifices his health in order to make money. Then he sacrifices money to recuperate his health. And then he is so anxious about the future that he does not enjoy the present; the result being that he does not live in the present or the future; he lives as if he is never going to die, and then dies having never really lived. -James J Lachard</p>
+</blockquote>
+<h2 id="an-h2-header">An h2 header</h2>
+<p><strong>Some code blocks</strong></p>
+<pre><code>define foobar() {
+    print &quot;Welcome to flavor country!&quot;;
+}</code></pre>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> time
+<span class="co"># Quick, count to ten!</span>
+<span class="cf">for</span> i <span class="op">in</span> <span class="bu">range</span>(<span class="dv">10</span>):
+    <span class="co"># (but not *too* quick)</span>
+    time.sleep(<span class="fl">0.5</span>)
+    <span class="bu">print</span> i</code></pre></div>
+<h3 id="an-h3-header">An h3 header</h3>
+<p>A nested list:</p>
+<ol style="list-style-type: decimal">
+<li><p>First, get these ingredients:</p>
+<ul>
+<li>carrots</li>
+<li>celery</li>
+<li>lentils</li>
+</ul></li>
+<li><p>Boil some water.</p></li>
+<li><p>Dump everything in the pot and follow this algorithm:</p>
+<pre><code>find wooden spoon
+uncover pot
+stir
+cover pot
+balance wooden spoon precariously on pot handle
+wait 10 minutes
+goto first step (or shut off burner when done)</code></pre>
+<p>Do not bump wooden spoon or it will fall.</p></li>
+</ol>
+<p>Here's a link to <a href="http://foo.bar">a website</a>, to a <a href="local-doc.html">local doc</a>, and to a <a href="#an-h2-header">section heading in the current doc</a>. Here's a footnote <a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a>.</p>
+<p>Tables can look like this:</p>
+<table>
+<caption>Shoes, their sizes, and what they're made of</caption>
+<thead>
+<tr class="header">
+<th align="left">size</th>
+<th align="left">material</th>
+<th align="left">color</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">9</td>
+<td align="left">leather</td>
+<td align="left">brown</td>
+</tr>
+<tr class="even">
+<td align="left">10</td>
+<td align="left">hemp canvas</td>
+<td align="left">natural</td>
+</tr>
+<tr class="odd">
+<td align="left">11</td>
+<td align="left">glass</td>
+<td align="left">transparent</td>
+</tr>
+</tbody>
+</table>
+<p>Multi-line tables:</p>
+<table style="width:46%;">
+<colgroup>
+<col width="13%" />
+<col width="31%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">keyword</th>
+<th align="left">text</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">red</td>
+<td align="left">Sunsets, apples, and other red or reddish things.</td>
+</tr>
+<tr class="even">
+<td align="left">green</td>
+<td align="left">Leaves, grass, frogs and other things it's not easy being.</td>
+</tr>
+</tbody>
+</table>
+<p>A horizontal rule follows.</p>
+<hr />
+<p>Images are responsive by default:</p>
+<div class="figure">
+<img src="sakura.png" title="An exemplary image" alt="example image" />
+<p class="caption">example image</p>
+</div>
+<hr />
+<h1 id="form-elements">Form Elements</h1>
+<form>
+<fieldset id="forms__input">
+<legend>Input fields</legend>
+<p>
+<label for="input__text">Text Input</label> <input id="input__text" type="text" placeholder="Text Input">
+</p>
+<p>
+<label for="input__password">Password</label> <input id="input__password" type="password" placeholder="Type your Password">
+</p>
+<p>
+<label for="input__webaddress">Web Address</label> <input id="input__webaddress" type="url" placeholder="http://yoursite.com">
+</p>
+<p>
+<label for="input__emailaddress">Email Address</label> <input id="input__emailaddress" type="email" placeholder="name@email.com">
+</p>
+<p>
+<label for="input__phone">Phone Number</label> <input id="input__phone" type="tel" placeholder="(999) 999-9999">
+</p>
+<p>
+<label for="input__search">Search</label> <input id="input__search" type="search" placeholder="Enter Search Term">
+</p>
+<p>
+<label for="input__text2">Number Input</label> <input id="input__text2" type="number" placeholder="Enter a Number">
+</p>
+<p>
+<label for="input__text3" class="error">Error</label> <input id="input__text3" class="is-error" type="text" placeholder="Text Input">
+</p>
+<p>
+<label for="input__text4" class="valid">Valid</label> <input id="input__text4" class="is-valid" type="text" placeholder="Text Input">
+</p>
+</fieldset>
+<p>
+<a href="#top">[Top]</a>
+</p>
+<fieldset id="forms__select">
+<legend>Select menus</legend>
+<p>
+<label for="select">Select</label> <select id="select"> <optgroup label="Option Group"> <option>Option One</option> <option>Option Two</option> <option>Option Three</option> </optgroup> </select>
+</p>
+</fieldset>
+<p>
+<a href="#top">[Top]</a>
+</p>
+<fieldset id="forms__checkbox">
+<legend>Checkboxes</legend>
+<ul class="list list--bare">
+<li>
+<label for="checkbox1"><input id="checkbox1" name="checkbox" type="checkbox" checked="checked"> Choice A</label>
+</li>
+<li>
+<label for="checkbox2"><input id="checkbox2" name="checkbox" type="checkbox"> Choice B</label>
+</li>
+<li>
+<label for="checkbox3"><input id="checkbox3" name="checkbox" type="checkbox"> Choice C</label>
+</li>
+</ul>
+</fieldset>
+<p>
+<a href="#top">[Top]</a>
+</p>
+<fieldset id="forms__textareas">
+<legend>Textareas</legend>
+<p>
+<label for="textarea">Textarea</label>
+<textarea id="textarea" rows="8" cols="48" placeholder="Enter your message here">
+</textarea>
+</p>
+</fieldset>
+<p>
+<a href="#top">[Top]</a>
+</p>
+<fieldset id="forms__html5">
+<fieldset id="forms__action">
+<legend>Action buttons</legend>
+<p>
+<input type="submit" value="input type=submit"> <input type="button" value="input type=button"> <input type="reset" value="input type=reset"> <input type="submit" value="input disabled" disabled>
+</p>
+<p>
+<button type="submit">
+&lt;button type=submit&gt;
+</button>
+<button type="button">
+&lt;button type=button&gt;
+</button>
+<button type="reset">
+&lt;button type=reset&gt;
+</button>
+<button type="button" disabled>
+&lt;button disabled&gt;
+</button>
+</p>
+</fieldset>
+<p>
+<a href="#top">[Top]</a>
+</p>
+</form>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>Footnote text goes here.<a href="#fnref1">↩</a></p></li>
+</ol>
+</div>
+        </div>
+        <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+              m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+          ga('create', 'UA-63732371-1', 'auto');
+          ga('send', 'pageview');
+        </script>
+    </body>
+</html>
