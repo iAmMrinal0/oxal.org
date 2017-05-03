@@ -31,16 +31,8 @@
     <span id="switch"><button id="switchThemeButton" onclick="switchSakuraTheme();">Switch</button>Current theme: <span id="currentTheme">sakura (default)</span></span>
   </div>
   <div id="top">
-    <h1 id="header-level-1">Header level 1</h1>
-    <h2 id="header-level-2">Header level 2</h2>
-    <h3 id="header-level-3">Header level 3</h3>
-    <h4 id="header-level-4">Header level 4</h4>
-    <h5 id="header-level-5">Header level 5</h5>
-    <h6 id="header-level-6">Header level 6</h6>
-
-    <p>A horizontal line:</p>
-    <hr>
-
+    <h1>Sakura demo (h1 header)</h1>
+    <p>This is an anchor tag/hyper link: <a href="https://github.com/oxalorg/sakura">sakura - Github Repository</a></p>
     <p>Paragraphs look like this. Font size along with line height and maximum width are optimized for reading.</p>
 
     <p><em>Italic</em>, <strong>bold</strong>, and <code>monospace</code>. Itemized lists look like:</p>
@@ -95,6 +87,16 @@ goto first step (or shut off burner when done)</code></pre>
       <p>Do not bump wooden spoon or it will fall.</p>
     </li>
   </ol>
+
+  <h1 id="header-level-1">Header level 1</h1>
+  <h2 id="header-level-2">Header level 2</h2>
+  <h3 id="header-level-3">Header level 3</h3>
+  <h4 id="header-level-4">Header level 4</h4>
+  <h5 id="header-level-5">Header level 5</h5>
+  <h6 id="header-level-6">Header level 6</h6>
+
+  <p>A horizontal line:</p>
+  <hr>
 
   <p>Here's a link to <a href="http://foo.bar">a website</a>, to a <a href="local-doc.html">local doc</a>, and to a <a href="#an-h2-header">section heading in the current doc</a>. Here's a footnote <a href="#fn1" id="fnref1"><sup>1</sup></a>.</p>
   <p>Tables can look like this:</p>
@@ -228,8 +230,24 @@ goto first step (or shut off burner when done)</code></pre>
   </div>
 </div>
 <script>
-  var themes = ["sakura.css", "sakura-earthly.css", "sakura-vader.css"];
-  var themeName = ["sakura (default)", "sakura-earthly", "sakura-vader"];
+  var themes = [
+    {
+      name: "Sakura (default)",
+      href: "sakura.css",
+    },
+    {
+      name: "sakura-earthly",
+      href: "sakura-earthly.css",
+    },
+    {
+      name: "sakura-vader",
+      href: "sakura-vader.css",
+    },
+    {
+      name: "sakura-dark",
+      href: "sakura-dark.css"
+    },
+  ];
   var current = 0;
   var sakura = document.getElementById("sakura-css");
   sakura.disabled = false;
@@ -246,8 +264,8 @@ goto first step (or shut off burner when done)</code></pre>
   var switchTag = document.getElementById("switch");
   var currentThemeTag = document.getElementById("currentTheme");
   function switchSakuraTheme() {
-    sakura.href = themes[(current + 1)% themes.length];
-    currentThemeTag.innerHTML = themeName[(current + 1)% themes.length];
+    sakura.href = themes[(current + 1)% themes.length].href;
+    currentThemeTag.innerHTML = themes[(current + 1)% themes.length].name;
     current += 1
   }
 </script>
