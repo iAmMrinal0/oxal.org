@@ -23,6 +23,16 @@ Compare a live page **WITH** and **WITHOUT** sakura.
 
 * [https://oxal.org/projects/sakura/demo](https://oxal.org/projects/sakura/demo)
 
+## Bookmark
+
+Don't want to develop using sakura, but instead want to use it
+on websites with outdated 90's design (i.e. no css)?
+
+If so, enable sakura on any website using the following
+instructions:
+
+* [https://oxal.org/projects/sakura/bookmark](https://oxal.org/projects/sakura/bookmark)
+
 ## Why? - Reasons to use sakura
 
 How exactly does sakura help you? I had a discussion about this on
@@ -111,6 +121,7 @@ $font-size-base: 1.8rem;
 
 ## Contributors
 
+* Bookmarklet was added by @Zhouzi
 * The image is credited to
 [Deedster](https://pixabay.com/en/users/Deedster-2541644/)
 
@@ -121,3 +132,11 @@ $font-size-base: 1.8rem;
 
 Please leave a star :)
 
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+ })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-63732371-1', 'auto');
+ga('send', 'pageview');
+</script>
