@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type">
+    <title>sakura bookmark</title>
+
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+
+    <link href="demo/normalize.css" rel="stylesheet" type="text/css">
+    <link href="demo/sakura.css" id="sakura-css" rel="stylesheet" type="text/css">
+
+    <style>
+      body{
+        padding-top: 40px;
+      }
+    </style>
+
+  </head>
+
+  <body>
+
+      <h1>Sakura Bookmarklet</h1>
+      <p>Enable Sakura.css on any website by <strong>dragging and dropping</strong> the below bookmarklet link
+        in your browser's bookmarks bar:</p>
+
+      <div id="bookmarklet">
+        <a class="button" href="javascript:(function()%7B(function()%7B%22use%20strict%22%3Bfunction%20e(e)%7Breturn%20Array.prototype.slice.call(window.document.querySelectorAll(e))%7Dfunction%20t()%7Balert(%22Sorry%2C%20sakura%20styles%20could%20not%20be%20applied%20to%20this%20page.%22)%7Dfunction%20r()%7Bvar%20t%3De(%22link%22).filter(function(e)%7Breturn%22stylesheet%22%3D%3D%3De.getAttribute(%22rel%22)%26%26e!%3D%3Dn%7D)%2Cr%3De(%22style%22)%2Co%3Dt.concat(r)%3Bo.forEach(function(e)%7Be.parentElement.removeChild(e)%7D)%7Dvar%20n%3Dwindow.document.createElement(%22link%22)%3Bn.addEventListener(%22error%22%2Ct)%2Cn.addEventListener(%22load%22%2Cr)%2Cn.setAttribute(%22rel%22%2C%22stylesheet%22)%2Cn.setAttribute(%22href%22%2C%22https%3A%2F%2Funpkg.com%2Fsakura.css%2Fcss%2Fsakura.css%22)%2Cwindow.document.head.appendChild(n)%7D)()%3B%7D)()">
+          sakura.css bookmarklet</a> 
+      </div>
+      <p><small>Warning: Using the bookmark can significantly change the layout of the page, especially the top navigation bars, but all-in-all the text would be much more readable and responsive. If you'd like to reset the page to it's original style, simply refresh the page.</small></p>
+      <hr>
+      <ul>
+        <li>What is sakura? <a href="/projects/sakura">sakura home page</a></li>
+        <li>Demo of sakura.css: <a href="/projects/sakura/demo">sakura demo page</a></li>
+        <li>Github repo/source code: <a href="https://github.com/oxalorg/sakura">sakura github page</a></li>
+      </ul>
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-63732371-1', 'auto');
+  ga('send', 'pageview');
+  </script>
+  </body>
+</html>
