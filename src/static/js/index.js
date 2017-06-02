@@ -74,4 +74,4 @@ var inputHandler = function (ans) {
 // Main logic
 arkControl.print("Connecting...");
 arkControl.print("Logged in @ark.");
-arkControl.input("Welcome aboard. Type `help` to recieve help.", inputHandler);
+arkControl.input("Welcome aboard. Type `help` to receive help.", inputHandler);
